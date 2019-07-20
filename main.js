@@ -8,16 +8,23 @@ tinymce.init({
       }
 });
 
+const TextToTranslate = document.getElementById('TextForTranslation')
+const Translation = document.getElementById('Translation')
+
+TextToTranslate.oninput=function(){
+    textToTranslate = TextToTranslate.value 
+    getTranslation(textToTranslate)
+};
+
 function callback(e) {
-    // alert(tinymce.activeEditor.selection.getContent({format: 'text'}));;
     var textToTranslate = tinymce.activeEditor.selection.getContent({format: 'text'});
-    document.getElementById('TextForTranslation').value = textToTranslate
+    TextToTranslate.value = textToTranslate
     getTranslation(textToTranslate)
 };
 
 function translate(textToTranslate){
-    document.getElementById('Translation').value = getTranslation(textToTranslate)
-}
+    Translation.value = getTranslation(textToTranslate)
+};
 
 function getTranslation(textToTranslate){
 
@@ -27,17 +34,15 @@ function getTranslation(textToTranslate){
     const request = new XMLHttpRequest();
     const url = "https://translate.yandex.net/api/v1.5/tr.json/translate";
     const params = "key=" + key + "&text=" + textToTranslate + "&lang=" + lang;
-    
-    //	Здесь нужно указать в каком формате мы будем принимать данные вот и все	отличие 
+ 
     request.responseType =	"json";
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     
     request.addEventListener("readystatechange", () => {
-    
         if (request.readyState === 4 && request.status === 200) {
             let obj = request.response;
-            document.getElementById('Translation').value = obj.text
+            Translation.value = obj.text
         }
     });
     
