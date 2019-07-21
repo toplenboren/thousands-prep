@@ -6,6 +6,7 @@ tinymce.init({
     init_instance_callback: function (editor) {
         editor.on('NodeChange', callback)
         editor.on('KeyPress', updateCount)
+        editor.on('Change', updateCount)
       }
 });
 
