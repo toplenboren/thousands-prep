@@ -12,7 +12,7 @@
     <div class="container">
 
             <div class="row">
-              <h1>paste text to the Raw Text, then select something and get the translation</h1>
+              <h1></h1>
             </div>
 
             <div class="row">
@@ -32,9 +32,35 @@
                     <input class="form-control" id="Translation" ></input>
                 </div>
             </div>
+            
+            <div class="row">
+              <p></p>
+            </div>
+
+            <div class="row">
+              <div class="col-sm">
+                  <button type="button" id="Push" class="btn btn-primary btn-sm btn-block">Push word</button>
+              </div>
+              <div class="col-sm">
+                  <button type="button" id="Pop" class="btn btn-warning btn-sm btn-block">Pop last</button>
+              </div>
+              <div class="col-sm">
+                  <button type="button" id="Info" class="btn btn-info btn-sm btn-block">Check on list</button>
+              </div>
+            </div>
+
+            <div class="form-row align-items-center">
+              <div class="col-sm">
+                  <input type="text" class="form-control-plaintext" id="StaticWordCount" value="здесь будет количество слов в тексте">
+              </div>
+              <div class="col-sm">
+                  <input type="text" class="form-control-plaintext" id="StaticWordlistCount" value="здесь будет количество слов в вордлисте">
+              </div>
+            </div>
 
     </div>
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+    <script src="stack.js"></script>
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

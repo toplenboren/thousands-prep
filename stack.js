@@ -1,6 +1,6 @@
 function Stack() {
     this._size = 0;
-    this._storage = {};
+    this._storage = [];
 }
  
 Stack.prototype.push = function(data) {
@@ -20,4 +20,12 @@ Stack.prototype.pop = function() {
  
         return deletedData;
     }
+};
+
+Stack.prototype.getElementsList = function() {
+    return this._storage;
+};
+
+Stack.prototype.getQuanityOfElements = function() {
+    return this._size;
 };
